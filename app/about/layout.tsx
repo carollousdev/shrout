@@ -5,8 +5,8 @@ export default function AboutLayout({
 }) {
   return (
     <div>
-      <div className="bg-blue-700">
-        <h1>Carollous Dachi</h1>
+      <div className="h-36 w-full bg-blue-700">
+        <h1 className="text-white">Carollous Dachi</h1>
       </div>
       {children}
     </div>
