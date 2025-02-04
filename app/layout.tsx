@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import Link from "next/link";
+import React from "react";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -9,9 +10,12 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
   children,
+  profile,
 }: Readonly<{
   children: React.ReactNode;
+  profile: React.ReactNode;
 }>) {
+  const isAdmin = false;
   return (
     <html lang="en">
       <body>
@@ -21,14 +25,12 @@ export default function RootLayout({
               <Link href={"/"}>Home</Link>
             </li>
             <li>
-              <Link href={"/about/"}>About</Link>
-            </li>
-            <li>
-              <Link href={"/about/me"}>Me</Link>
+              <Link href={"/abouts"}>About</Link>
             </li>
           </ul>
         </nav>
         {children}
+        {isAdmin && profile}
       </body>
     </html>
   );
